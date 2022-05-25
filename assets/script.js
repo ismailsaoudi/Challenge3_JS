@@ -2,7 +2,7 @@
 
 // Assignment code here
 var passwordText = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
+var = " "
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
