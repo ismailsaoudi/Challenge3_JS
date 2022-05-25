@@ -28,6 +28,7 @@ header {
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
+ 
 }
 
 .card {
@@ -42,6 +43,9 @@ header {
   padding: 30px 40px;
 }
 
+.card-header{
+  text-align: center;
+}
 .card-header::after {
   content: " ";
   display: block;
@@ -151,5 +155,12 @@ margin: 1rem;
 padding: 1rem;
 justify-content: center;
 
+}
+.innerContainer{
+  display: flex;
+  align-items: center;
+}
 
+.numberImput{
+  width: 3rem;
 }

@@ -20,15 +20,14 @@
       </div>
       <div class="card-body">
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-
       </div>
       <div class="card-footer">
         <form class="labelinputs">
-          <label for="CharactersAmountNumber"> Number Of Characters </label>
-          <div>
-          <input type="Range" min="1" max="50" value="12" id="CharactersAmountRange">
-          <input type="Number" min="1" max="50" value="12" id="CharactersAmountNumber">
-        </div>
+          <label for="charactersAmountNumber"> Number Of Characters </label>
+          <div class="innerContainer">
+            <input type="Range" min="8" max="50" value="12" id="CharactersAmountRange">
+            <input class="numberImput" type="Number" min="1" max="50" value="12" id="CharactersAmountNumber">
+          </div>
           <label for="includeUppercase"> Include Uppercase </label>
           <input type="checkbox" id="includeUppercase">
 
@@ -44,7 +43,8 @@
 
     </div>
   </div>
-  <script src="./assets/script.js"></script>
+  
+  <script src="assets/script.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,23 @@
 // when the user press generate password 
+// number of characters share value betwwn slider and number box
 
+var charactersAmountRange = document.getElementById ( 'CharactersAmountRange' )
+var charactersAmountNumber = document.getElementById ( 'CharactersAmountNumber' )
+
+CharactersAmountNumber.addEventListener('input', syncharacterAmount)
+CharactersAmountRange.addEventListener('input', syncharacterAmount)
+
+function syncharacterAmount(e) {
+var value = e.target.value
+CharactersAmountNumber.value = value
+CharactersAmountRange.value = value
+
+}
+console.log(syncharacterAmount)
 // Assignment code here
 var passwordText = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var = " "
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
