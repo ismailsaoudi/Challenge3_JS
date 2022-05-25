@@ -5,8 +5,16 @@ var charactersAmountRange = document.getElementById ( 'CharactersAmountRange' )
 var charactersAmountNumber = document.getElementById ( 'CharactersAmountNumber' )
 // var passwordText = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 // var generateBtn = document.getElementById("generate");
-var includeNumbersEl = document.getElementById("includeUppercase")
+var includeAmountNumbersEl = document.getElementById("includeUppercase")
 var includeSymbolsEl = document.getElementById("includeSymbols")
+var includeUppercaseEl = document.getElementById("includeUppercase")
+
+var UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
+var LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
+var SYMBOLS_CHAR_CODE = arrayFromLowToHigh(33, 47)
+var NUMBERS_CHAR_CODE = arrayFromLowToHigh(48, 57)
+
+
 // var password = generatePassword( characterAmount, includeNumbers, includeSymbols, includeUppercase)
 var labelimputs = document.getElementById("passwordGeneratorForm")
 
@@ -18,10 +26,20 @@ labelimputs.addEventListener ('submit', e=> {
 var characterAmount = charactersAmountNumber.value
 var includeUppercase = includeUppercase.checked
 var includeSymbols = includeSymbolsEl.checked
-var includeNumbers = includeNumbersEl.checked
+var includeNumbers = includeAmountNumbersEl.checked
 var password = generatePassword(charactersAmount, includeUppercase, includeSymbols, includeNumbers )
 })
 
+function generatePassword(characterAmount, includeNumbers, includeSymbols, includeUppercase){
+ String.fromCharCode() 
+}
+function arrayFromLowToHigh(low, high){
+var array = []
+  for( let i = low; i<= high; i++){
+array.push(i)
+  }
+  return array
+}
 // Get references to the #generate element
 
 
