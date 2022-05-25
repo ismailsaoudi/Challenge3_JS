@@ -1,4 +1,7 @@
+// when the user press generate password 
+
 // Assignment code here
+var passwordText = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 
 // Get references to the #generate element
@@ -15,3 +18,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
