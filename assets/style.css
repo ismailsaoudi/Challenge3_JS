@@ -43,7 +43,7 @@ header {
   padding: 30px 40px;
 }
 
-.card-header{
+/* .card-header{
   text-align: center;
 }
 .card-header::after {
@@ -52,19 +52,33 @@ header {
   width: 100%;
   background: #e7e9eb;
   height: 2px;
-}
+} */
 
-.card-body {
+/* .card-body {
   min-height: 100px;
   border: solid red;
   
 
-}
+} */
 
-.card-footer {
+/* .card-footer {
   text-align: center;
+} */
+#passwordDisplay {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding: 2rem;
+  border: 1px solid #333;
+  height: 2rem;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  border-radius: .5rem;
+  
+  
 }
-
 .card-footer::before {
   content: " ";
   display: block;
@@ -78,6 +92,7 @@ header {
   display: block;
   clear: both;
 }
+
 
 .btn {
   border: none;
@@ -94,14 +109,28 @@ header {
   text-align: center;
   cursor: pointer;
 }
-
+.copytext {
+  border: none;
+  background-color: rgb(214, 23, 23);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 34px;
+  text-align: center;
+  cursor: pointer;
+}
 
 
 .float-right {
   float: right;
 }
 
-#password {
+/* #password {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -120,7 +149,7 @@ header {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
-}
+} */
 
 @media (max-width: 690px) {
   .btn {
@@ -136,6 +165,11 @@ header {
 
 @media (max-width: 500px) {
   .btn {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 500px) {
+  .copytext {
     font-size: 0.8rem;
   }
 }
@@ -163,3 +197,7 @@ color: #f9fbfd;
 opacity: 70%;
 
 }
+.copytext:hover{
+  color: #f9fbfd;
+  opacity: 70%;
+  }
