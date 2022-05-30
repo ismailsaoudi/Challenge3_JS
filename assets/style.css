@@ -56,6 +56,9 @@ header {
 
 .card-body {
   min-height: 100px;
+  border: solid red;
+  
+
 }
 
 .card-footer {
@@ -78,7 +81,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(214, 23, 23);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -92,10 +95,7 @@ header {
   cursor: pointer;
 }
 
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
-}
+
 
 .float-right {
   float: right;
@@ -141,12 +141,6 @@ button[disabled] {
 }
 
 .labelinputs{
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center;
-padding: 5rem;
-border-radius: 1rem;
-flex-direction: column; */
 display: grid;
 grid-template-columns: auto auto;
 row-gap: 1rem;
@@ -163,4 +157,9 @@ justify-content: center;
 
 .numberImput{
   width: 3rem;
+}
+.btn:hover{
+color: #f9fbfd;
+opacity: 70%;
+
 }

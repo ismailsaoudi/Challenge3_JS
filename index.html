@@ -12,19 +12,18 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>Password Generator</h1>
+      <h1> Random Password Generator</h1>
     </header>
     <div class="card">
       <div class="card-header">
         <h2>Generate a Password</h2>
       </div>
-      <div class="card-body">
-        <!-- <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea> -->
-        
-      </div>
+      <!-- <div class="card-body">
+        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+      </div> -->
       <div class="card-footer">
 
-        <form id="passwordGeneratorForm"  class="labelinputs">
+        <form id="passwordGeneratorForm" class="labelinputs">
           <label for="charactersAmountNumber"> Number Of Characters </label>
           <div class="innerContainer">
             <input type="Range" min="1" max="50" value="12" id="CharactersAmountRange">
@@ -32,19 +31,17 @@
           </div>
           <label for="includeUppercase"> Include Uppercase </label>
           <input type="checkbox" id="includeUppercase">
-
           <label for="includeNumbers"> Include Numbers </label>
           <input type="checkbox" id="includeNumbers">
-
           <label for="includeSymbols"> Include Symbols </label>
           <input type="checkbox" id="includeSymbols">
-
-          <button id="submit" class="btn">Generate Password</button>
-
+          <!-- <button id="submit" class="btn">Generate Password</button> -->
         </form>
-        
+        <div id="submit" class="btn">
+          <input type="submit" value="Generate Password"
+            style="background-color: rgb(214, 23, 23); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border: none; color: azure;">
+        </div>
       </div>
-      
     </div>
   </div>
 
