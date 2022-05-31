@@ -15,7 +15,11 @@
       <h1>Random Password Generator</h1>
     </header>
     <div class="card">
-      <h3 class="password-display" id="passwordDisplay"> Your password</h3>
+      <div class="copy">
+        <p class="password-display" id="passwordDisplay"> Your password</p>
+        <button onclick="copyToClipBoard ()" id="copyTextBtn" class="copytext"> Copy
+        </button>
+      </div>
       <form id="passwordGeneratorForm" class="labelinputs">
         <label for="charactersAmountNumber"> Number Of Characters </label>
         <div class="innerContainer">
@@ -28,12 +32,16 @@
         <input type="checkbox" id="includeNumbers">
         <label for="includeSymbols"> Include Symbols </label>
         <input type="checkbox" id="includeSymbols">
-        <button type="submit" class="btn">Generate Password</button>
-        <button onclick="myFunction()" class="copytext"> Copy to Clipboard</button>
+        <div id="btn">
+          <button type="submit" class="btn">Generate Password</button>
+        </div>
+        <!-- <button  onclick="copyText" id="copyTextBtn" class="copytext"> Copy to Clipboard</button> -->
       </form>
+
     </div>
   </div>
 
   <script src="assets/script.js"></script>
 </body>
+
 </html>

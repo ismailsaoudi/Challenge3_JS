@@ -43,34 +43,14 @@ header {
   padding: 30px 40px;
 }
 
-/* .card-header{
-  text-align: center;
-}
-.card-header::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-} */
 
-/* .card-body {
-  min-height: 100px;
-  border: solid red;
-  
-
-} */
-
-/* .card-footer {
-  text-align: center;
-} */
 #passwordDisplay {
   background-color: white;
   color: rgb(0, 0, 0);
   padding: 2rem;
   border: 1px solid #333;
   height: 2rem;
-  width: auto;
+  width: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,13 +81,14 @@ header {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
-  display: inline-block;
+  display: flex;
   font-size: 22px;
   line-height: 22px;
   margin: 16px 16px 16px 20px;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+  align-items: center;
 }
 .copytext {
   border: none;
@@ -117,12 +98,14 @@ header {
     0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
-  font-size: 22px;
+  font-size: 15px;
   line-height: 22px;
   margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+  padding: auto;
   text-align: center;
   cursor: pointer;
+  width: 15%;
+  height: 50px;
 }
 
 
@@ -130,26 +113,6 @@ header {
   float: right;
 }
 
-/* #password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
-} */
 
 @media (max-width: 690px) {
   .btn {
@@ -200,4 +163,9 @@ opacity: 70%;
 .copytext:hover{
   color: #f9fbfd;
   opacity: 70%;
+  }
+  .copy{
+    display: flex;
+    align-items: center;
+   
   }

@@ -1,3 +1,4 @@
+
 var characterAmountRange = document.getElementById('CharactersAmountRange')
 var characterAmountNumber = document.getElementById('CharactersAmountNumber')
 var  includeUppercaseElement = document.getElementById('includeUppercase')
@@ -53,17 +54,12 @@ function syncCharacterAmount(e) {
   characterAmountRange.value = value
 }
 
-function myFunction() {
-  /* Get the text field */
-  var copyText = document.getElementById("passwordDisplay");
 
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
+function copyToClipBoard() {
+  var copyText = document.getElementById('passwordDisplay').value;
+  navigator.clipboard.writeText(copyText);
+      alert("Copied to clipboard");
 
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
+  };
   
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-}
+
