@@ -1,82 +1,69 @@
-var charactersAmountRange = document.getElementById ( 'CharactersAmountRange' )
-var charactersAmountNumber = document.getElementById ( 'CharactersAmountNumber' )
-var includeAmountNumbersEl = document.getElementById("includeUppercase")
-var includeSymbolsEl = document.getElementById("includeSymbols")
-var includeUppercaseEl = document.getElementById("includeUppercase")
-var UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
-var LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
-var SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47)
-var NUMBERS_CHAR_CODES = arrayFromLowToHigh(48, 57)
-
-var labelimputs = document.getElementById("passwordGeneratorForm")
-CharactersAmountNumber.addEventListener('input', syncharacterAmount)
-CharactersAmountRange.addEventListener('input', syncharacterAmount)
-labelimputs.addEventListener ('submit', e=> {
+var characterAmountRange = document.getElementById('CharactersAmountRange')
+var characterAmountNumber = document.getElementById('CharactersAmountNumber')
+var  includeUppercaseElement = document.getElementById('includeUppercase')
+var  includeNumbersElement = document.getElementById('includeNumbers')
+var  includeSymbolsElement = document.getElementById('includeSymbols')
+var  form = document.getElementById('passwordGeneratorForm')
+var  passwordDisplay = document.getElementById('passwordDisplay')
+var  UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
+var  LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
+var  NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
+var  SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
+  arrayFromLowToHigh(58, 64)
+).concat(
+  arrayFromLowToHigh(91, 96)
+).concat(
+  arrayFromLowToHigh(123, 126)
+)
+characterAmountNumber.addEventListener('input', syncCharacterAmount)
+characterAmountRange.addEventListener('input', syncCharacterAmount)
+form.addEventListener('submit', e => {
   e.preventDefault()
-var characterAmount = charactersAmountNumber.value
-var includeUppercase = includeUppercase.checked
-var includeSymbols = includeSymbolsEl.checked
-var includeNumbers = includeAmountNumbersEl.checked
-var password = generatePassword(charactersAmount, includeUppercase, includeSymbols, includeNumbers )
+
+  var  characterAmount = characterAmountNumber.value
+  var  includeUppercase = includeUppercaseElement.checked
+  var  includeNumbers = includeNumbersElement.checked
+  var  includeSymbols = includeSymbolsElement.checked
+  var  password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
+  passwordDisplay.innerText = password
 })
-
-// function generatePassword(characterAmount, includeNumbers, includeSymbols, includeUppercase){
-// let charCodes = LOWERCASE_CHAR_CODES
-// if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
-// if (includeNumbers) charCodes = charCodes.concat(NUMBERS_CHAR_CODES)
-// if (includeSymbols) charCodes = charCodes.concat(SYMBOLS_CHAR_CODES)
-// var passwordcharacters = []
-// for (let i=0; i< characterAmount, i++)
-// passwordcharacters.push(character)
-//  String.fromCharCode() 
-// }
-
-
-function arrayFromLowToHigh(low, high){
-var array = []
-  for( let i = low; i<= high; i++){
-array.push(i)
+function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
+  var charCodes = LOWERCASE_CHAR_CODES
+  if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+  if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+  if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+  
+  var  passwordCharacters = []
+  for (let i = 0; i < characterAmount; i++) {
+    var  characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+    passwordCharacters.push(String.fromCharCode(characterCode))
+  }
+  return passwordCharacters.join('')
+}
+function arrayFromLowToHigh(low, high) {
+  var  array = []
+  for (let i = low; i <= high; i++) {
+    array.push(i)
   }
   return array
 }
-// Get references to the #generate element
+function syncCharacterAmount(e) {
+  var  value = e.target.value
+  characterAmountNumber.value = value
+  characterAmountRange.value = value
+}
 
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("passwordDisplay");
 
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
 
-function syncharacterAmount(e) {
-  var value = e.target.value
-  CharactersAmountNumber.value = value
-  CharactersAmountRange.value = value
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
   
-  }
-
-  // function generatePassword(characterAmount, includeNumbers, includeSymbols, includeUppercase)
-
-
-
-
-
-
-
-
-// Assignment code here
-
-
-
-
-
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-
-
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
