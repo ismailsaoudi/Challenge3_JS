@@ -4,6 +4,7 @@ var characterAmountNumber = document.getElementById('CharactersAmountNumber')
 var  includeUppercaseElement = document.getElementById('includeUppercase')
 var  includeNumbersElement = document.getElementById('includeNumbers')
 var  includeSymbolsElement = document.getElementById('includeSymbols')
+var copyTextBtn = document.getElementById("copyTextBtn")
 var  form = document.getElementById('passwordGeneratorForm')
 var  passwordDisplay = document.getElementById('passwordDisplay')
 var  UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
@@ -31,7 +32,9 @@ form.addEventListener('submit', e => {
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
   var charCodes = LOWERCASE_CHAR_CODES
   if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+  // alert("Upper Case Included")
   if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+  // alert ("Symbols Included")
   if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
   
   var  passwordCharacters = []
@@ -54,12 +57,15 @@ function syncCharacterAmount(e) {
   characterAmountRange.value = value
 }
 
-
+// i will need to find a better solution to copy the password .
 function copyToClipBoard() {
-  var copyText = document.getElementById('passwordDisplay').value;
+  var copyText = document.getElementById('passwordDisplay').innerText;
   navigator.clipboard.writeText(copyText);
-      alert("Copied to clipboard");
-
+  // navigator.clipboard.readText(copyText).then(
+  //   clipText => document.querySelector(".password-display").innerText += clipText);
+  // alert("Copied to clipboard");
   };
+
+copyTextBtn.addEventListener('click', copyToClipBoard)
   
 
