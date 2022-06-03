@@ -56,8 +56,10 @@ header {
   align-items: center;
   word-break: break-all;
   border-radius: .5rem;
-  
-  
+}
+
+#hide{
+  display: none;
 }
 .card-footer::before {
   content: " ";
